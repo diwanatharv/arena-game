@@ -29,6 +29,7 @@ func (a *Arena) StartMatch() {
 	}
 }
 
+// PrintMatchResults prints the results of the match, including the winner and final health of each player.
 func (a *Arena) PrintMatchResults() {
 	if a.Player1.IsAlive() {
 		fmt.Printf("Player 1 wins! Player 2 has been defeated.\n")
@@ -39,6 +40,7 @@ func (a *Arena) PrintMatchResults() {
 	fmt.Printf("Player 2's final health: %d\n", a.Player2.Health)
 }
 
+// getStartingPlayer determines the starting player based on their initial health.
 func (a *Arena) getStartingPlayer() *model.Player {
 	if a.Player2.Health < a.Player1.Health {
 		return &a.Player2
@@ -46,6 +48,7 @@ func (a *Arena) getStartingPlayer() *model.Player {
 	return &a.Player1
 }
 
+// getOpponent returns the opponent of the given player.
 func (a *Arena) getOpponent(player *model.Player) *model.Player {
 	if player == &a.Player1 {
 		return &a.Player2
