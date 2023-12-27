@@ -20,10 +20,6 @@ func (a *Arena) StartMatch() {
 		opponent := a.getOpponent(currentPlayer)
 		opponent.Defend(damage)
 
-		// Print round results (using indices if Name field is not available)
-		fmt.Printf("Player %d attacks Player %d for %d damage.\n", 1, 2, damage)
-		fmt.Printf("Player %d's health is now %d.\n", 2, opponent.Health)
-
 		if !opponent.IsAlive() {
 			break
 		}
